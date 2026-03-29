@@ -119,7 +119,7 @@ const About = () => {
         <div className="container mx-auto">
           <SectionHeading
             title="Our Values"
-            subtitle="Crafting spaces that elevate your lifestyle across every budget and vision."
+            subtitle="The principle that guides every design decision"
           />
           <div
             ref={values.ref}
