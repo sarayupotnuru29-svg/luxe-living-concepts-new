@@ -344,7 +344,7 @@ const Index = () => {
         <div className="container mx-auto">
           <SectionHeading
             title="Our Specialization"
-            subtitle="Crafting spaces that resonate with your lifestyle — across every budget and vision."
+            subtitle="Crafting spaces that elevate your lifestyle across every budget and vision.npm ru"
           />
 
           {/* Feature Badges */}
