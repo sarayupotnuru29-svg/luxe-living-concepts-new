@@ -114,7 +114,7 @@ const Services = () => {
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
             title="What We Offer"
-            subtitle="Crafting spaces that elevate your lifestyle across every budget and vision."
+            subtitle="Complete interior solutions for every scale and style"
           />
           <div ref={cards.ref} className="space-y-8">
             {services.map((s, i) => (
