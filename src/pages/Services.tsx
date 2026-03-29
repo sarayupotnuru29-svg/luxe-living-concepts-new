@@ -31,7 +31,8 @@ const generateGallery = (count: number, fileNameBase: string) => {
 const services = [
   {
     title: "Budget Friendly Interiors",
-    desc: "Beautiful designs that fit your budget without losing quality.₹5,99,000/-2BHK: (2 wardrobes + dressing, 1 tv unit, modular kitchen with crockery unit, shoe rack, ceiling (lights and electrical excluded).₹6,99,000/-3BHK: (3 wardrobes + dressing, 1 tv unit, modular kitchen with crockery unit, shoe rack, ceiling (lights and electrical excluded).",
+    // Added \n characters here for clean line breaks
+    desc: "Beautiful designs that fit your budget without losing quality.\n\n₹5,99,000/-\n2BHK: (2 wardrobes + dressing, 1 tv unit, modular kitchen with crockery unit, shoe rack, ceiling (lights and electrical excluded).\n\n₹6,99,000/-\n3BHK: (3 wardrobes + dressing, 1 tv unit, modular kitchen with crockery unit, shoe rack, ceiling (lights and electrical excluded).",
     image: serviceBudget,
     gallery: generateGallery(7, "budget"),
   },
@@ -113,7 +114,7 @@ const Services = () => {
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
             title="What We Offer"
-            subtitle="Complete interior solutions for every scale and style"
+            subtitle="Crafting spaces that elevate your lifestyle across every budget and vision."
           />
           <div ref={cards.ref} className="space-y-8">
             {services.map((s, i) => (
@@ -137,9 +138,15 @@ const Services = () => {
                   <h3 className="font-heading text-2xl md:text-3xl mb-4 text-foreground tracking-tight">
                     {s.title}
                   </h3>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed mb-6">
-                    {s.desc}
-                  </p>
+                  
+                  {/* FIX: Mapping the description by \n to ensure real line breaks appear */}
+                  <div className="font-body text-base text-muted-foreground leading-relaxed mb-6">
+                    {s.desc.split('\n').map((line, index) => (
+                      <span key={index} className="block min-h-[1.5rem]">
+                        {line}
+                      </span>
+                    ))}
+                  </div>
 
                   <button
                     onClick={() => openGallery(s.gallery)}

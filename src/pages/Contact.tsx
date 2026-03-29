@@ -6,7 +6,7 @@ import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 const serviceOptions = [
   "Budget Friendly Interiors",
   "Turn Key Projects",
-  "Commercial Interiors",
+  "Commercial Spaces",
   "Premium Interiors",
   "Luxury Interiors",
 ];
