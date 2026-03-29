@@ -48,7 +48,7 @@ const Footer = () => {
               {[
                 "Budget Friendly Interiors",
                 "Turn Key Projects",
-                "Commercial Interiors",
+                "Commercial Spaces",
                 "Premium Interiors",
                 "Luxury Interiors",
               ].map((s) => (

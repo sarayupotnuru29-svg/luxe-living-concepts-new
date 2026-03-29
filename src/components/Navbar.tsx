@@ -17,25 +17,34 @@
 
 //   return (
 //     <nav className="fixed top-0 left-0 right-0 z-50 bg-luxe-cream/90 backdrop-blur-sm border-b border-border">
-//       <div className="container mx-auto flex items-center justify-between h-24 px-6">
-//         <Link to="/" className="flex items-center gap-3">
-//           <img src={logo} alt="Luxe Living Concepts" className="h-14 md:h-16 w-auto" />
-//           <div className="whitespace-nowrap">
-//             {/* Reduced text size: text-base for mobile, text-lg for desktop */}
-//             <span className="font-heading text-base md:text-lg tracking-[0.12em] text-foreground uppercase">
-//               Luxe Living Concepts
-//             </span>
-//           </div>
+//       <div className="container mx-auto flex items-center justify-between h-24 px-4 md:px-6">
+//         {/* Logo */}
+//         <Link to="/" className="flex items-center gap-2 md:gap-3">
+//           <img
+//             src={logo}
+//             alt="Luxe Living Concepts"
+//             className="h-12 md:h-14 lg:h-16 w-auto"
+//           />
+//           {/*
+//             Hide brand name text on tablet (md) to prevent cramping with nav links.
+//             Show on mobile (always visible beside logo) and desktop (lg+).
+//             On tablet the logo alone identifies the brand.
+//           */}
+//           <span className="font-heading text-sm md:hidden lg:block lg:text-lg tracking-[0.12em] text-foreground uppercase whitespace-nowrap">
+//             Luxe Living Concepts
+//           </span>
 //         </Link>
 
-//         {/* Desktop */}
-//         <ul className="hidden md:flex items-center gap-10">
+//         {/* Desktop & Tablet Nav */}
+//         <ul className="hidden md:flex items-center gap-5 lg:gap-10">
 //           {links.map((l) => (
 //             <li key={l.to}>
 //               <Link
 //                 to={l.to}
-//                 className={`text-xs tracking-[0.2em] uppercase font-body font-medium transition-colors duration-300 hover:text-primary ${
-//                   pathname === l.to ? "text-primary border-b border-primary pb-1" : "text-foreground"
+//                 className={`text-[10px] lg:text-xs tracking-[0.15em] lg:tracking-[0.2em] uppercase font-body font-medium transition-colors duration-300 hover:text-primary ${
+//                   pathname === l.to
+//                     ? "text-primary border-b border-primary pb-1"
+//                     : "text-foreground"
 //                 }`}
 //               >
 //                 {l.label}
@@ -44,7 +53,7 @@
 //           ))}
 //         </ul>
 
-//         {/* Mobile toggle */}
+//         {/* Mobile hamburger */}
 //         <button
 //           onClick={() => setOpen(!open)}
 //           className="md:hidden text-foreground p-2"
@@ -99,25 +108,24 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-luxe-cream/90 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-24 px-4 md:px-6">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 md:gap-3">
+        {/* Logo & Brand Name */}
+        <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
           <img
             src={logo}
             alt="Luxe Living Concepts"
-            className="h-12 md:h-14 lg:h-16 w-auto"
+            className="h-10 md:h-12 lg:h-16 w-auto"
           />
-          {/*
-            Hide brand name text on tablet (md) to prevent cramping with nav links.
-            Show on mobile (always visible beside logo) and desktop (lg+).
-            On tablet the logo alone identifies the brand.
+          {/* Removed md:hidden to keep text visible on tablets.
+            Used text-xs on md (tablet) and text-lg on lg (desktop) 
+            to ensure it fits the available space.
           */}
-          <span className="font-heading text-sm md:hidden lg:block lg:text-lg tracking-[0.12em] text-foreground uppercase whitespace-nowrap">
+          <span className="font-heading text-xs sm:text-sm md:text-sm lg:text-lg tracking-[0.12em] text-foreground uppercase whitespace-nowrap">
             Luxe Living Concepts
           </span>
         </Link>
 
         {/* Desktop & Tablet Nav */}
-        <ul className="hidden md:flex items-center gap-5 lg:gap-10">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-10">
           {links.map((l) => (
             <li key={l.to}>
               <Link

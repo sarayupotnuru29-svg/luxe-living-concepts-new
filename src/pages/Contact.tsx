@@ -4,9 +4,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 const serviceOptions = [
-  "Budget Friendly Home Interiors",
+  "Budget Friendly Interiors",
   "Turn Key Projects",
-  "Commercial Interiors",
+  "Commercial Spaces",
   "Premium Interiors",
   "Luxury Interiors",
 ];
